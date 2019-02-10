@@ -1,7 +1,7 @@
 # *** Given a string, write a function to check if it is a permutation of palindrome. A palindrome is a word or a phrase that is same forwards and backwords. A permutation is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
 require 'byebug'
 
-#O(1) => as there can only 128 different characters and 110,000 unicode characters.
+#O(n) or O(1) => as there can only 128 different characters and 110,000 unicode characters.
 def palindrome_permutation?(str)
     unpaired_characters = Set.new
 
