@@ -7,7 +7,7 @@ def urlify?(str, length)
     # result = ''
     # # debugger
     # str.each_char.with_index do |ch, idx|
-    #     if ch == ' ' && idx < 13
+    #     if ch == ' ' && idx < length
     #         result += '%20'
     #     else
     #         result += ch
