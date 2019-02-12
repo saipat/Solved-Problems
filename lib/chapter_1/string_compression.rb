@@ -14,4 +14,4 @@ def string_compression(str)
     end
 
     compressed.length > str.length ? str : compressed
-end
+end 
