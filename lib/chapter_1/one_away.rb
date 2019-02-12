@@ -30,3 +30,5 @@ def one_away?(s1,s2)
 
     true
 end
+
+# O(n) => depends on the length of the string1.
