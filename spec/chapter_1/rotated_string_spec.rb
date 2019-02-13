@@ -1,6 +1,6 @@
-require "chapter_1/string_rotation.rb"
+require "chapter_1/rotated_string.rb"
 
-describe "String Rotation" do
+describe "Rotated String?" do
    it "returns true if s1 is a rotation of s2" do
         expect(rotated_string?('waterbottle', 'erbottlewat')).to eq(true)
     end

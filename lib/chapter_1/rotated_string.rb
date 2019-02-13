@@ -15,3 +15,4 @@ def rotated_string?(s1, s2)
     end
 
 end
+
