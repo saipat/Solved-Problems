@@ -6,6 +6,6 @@ describe 'Alien Language' do
     end
 
     it "returns the given array of words in sorted order" do
-        expect(sort_alien_language(["caa", "aaa", "aab"])).to eq(['c', 'a', 'b'])
+        expect(sort_alien_language(["caa", "aaaa", "aab"])).to eq(["c", "a", "b"])
     end
 end
