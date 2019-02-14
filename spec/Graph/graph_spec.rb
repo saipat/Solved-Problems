@@ -1,5 +1,5 @@
+require 'Graph/graph.rb'
 require 'rspec'
-require 'graph'
 
 describe Vertex do
   describe '#initialize' do
