@@ -1,4 +1,3 @@
-require 'rspec'
 require 'Graph/topological_sort'
 
 describe 'TopologicalSort' do
