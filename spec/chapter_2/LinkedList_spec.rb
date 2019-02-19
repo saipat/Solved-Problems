@@ -38,4 +38,19 @@ describe "Initialize Node" do
         node.add(30)
         expect(node.delete(5)).to eq('10 -> 20 -> 30')
     end
+
+    it "counts the no:of:nodes" do
+        node.add(10)
+        node.add(20)
+        node.add(30)
+        expect(node.count_nodes).to eq(4)
+    end
+
+    it "counts the no:of:nodes" do
+        node.add(10)
+        node.add(20)
+        node.add(30)
+        node.delete(5)
+        expect(node.count_nodes).to eq(3)
+    end
 end

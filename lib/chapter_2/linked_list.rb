@@ -34,6 +34,18 @@ class LinkedList
         # debugger
     end
 
+    def count_nodes
+        current = @head
+        count = 0
+        while current.next != nil
+            count += 1
+            current = current.next
+        end
+
+        count += 1
+        count
+    end
+
     def delete(val)
         current = @head
         if current.value == val
