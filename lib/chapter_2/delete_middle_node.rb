@@ -5,11 +5,14 @@ require_relative 'linked_list'
 # O(n)
 def delete_middle_node(list, k)
     return nil unless list
+    return 'can\'t delete head!' if list.head.value == k
 
-    current = list.head
+    current = list.head.next
 
     until current.nil?
-        if current.value == k
+        if current.value == k && current.next == nil 
+            return 'can\'t delete tail!'
+        elsif current.value == k 
             list.delete(current.value)
             return list.display
         end

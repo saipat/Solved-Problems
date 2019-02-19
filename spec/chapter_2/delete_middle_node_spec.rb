@@ -10,7 +10,7 @@ describe "Deletes the middle node" do
             @list.add(node)
         end
 
-        expect(delete_middle_node(@list, 'd')).to eq('a -> b -> c')
+        expect(delete_middle_node(@list, 'c')).to eq('a -> b -> d')
     end
 
     it "return the list with given the node deleted" do
@@ -22,5 +22,27 @@ describe "Deletes the middle node" do
         end
 
         expect(delete_middle_node(@list, '2')).to eq('no such node!')
+    end
+
+    it "should not delete the head" do
+        @nodes = %w[a b c d]
+        @list = LinkedList.new(@nodes.first)
+
+        (@nodes.drop(1)).each do |node| 
+            @list.add(node)
+        end
+
+        expect(delete_middle_node(@list, 'a')).to eq('can\'t delete head!')
+    end
+
+    it "should not delete the head" do
+        @nodes = %w[a b c d]
+        @list = LinkedList.new(@nodes.first)
+
+        (@nodes.drop(1)).each do |node| 
+            @list.add(node)
+        end
+
+        expect(delete_middle_node(@list, 'd')).to eq('can\'t delete tail!')
     end
 end
