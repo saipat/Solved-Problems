@@ -32,7 +32,6 @@ describe "Return Kth to the last" do
         @nodes = %w[]
         @list = LinkedList.new(@nodes.first)
 
-
         expect(kth_to_last(@list, 4)).to eq(nil)
     end
 end
