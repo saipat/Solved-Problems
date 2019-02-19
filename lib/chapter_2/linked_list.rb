@@ -33,4 +33,20 @@ class LinkedList
         full_list.join(' -> ')
         # debugger
     end
+
+    def delete(val)
+        current = @head
+        if current.value == val
+            @head = @head.next
+        else
+            while (current != nil && current.next != nil && current.next.value != val)
+                current = current.next
+            end
+            # debugger
+            if current != nil && current.next != nil
+                current.next = current.next.next
+            end
+        end
+        display
+    end
 end
