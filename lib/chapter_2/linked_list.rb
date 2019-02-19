@@ -1,4 +1,5 @@
 require_relative 'node'
+require 'byebug'
 
 class LinkedList
     attr_reader :head
@@ -10,22 +11,26 @@ class LinkedList
     # Traverse to the end of the list
     # And insert a new node over there with the specified value
     def add(val)
+        #  debugger
         current = @head
-        while current.next_node != nil
-            current = current.next_node
+        while current.next != nil
+            current = current.next
         end
-        current.next_node = Node.new(val, nil)
+        current.next = Node.new(val, nil)
+       
+        # current.next.value
         self
     end
 
     def display
         current = @head
         full_list =[]
-        while current.next_node != nil
+        while current.next != nil
             full_list += [current.value.to_s]
-            current = current.next_node
+            current = current.next
         end
         full_list += [current.value.to_s]
-        puts full_list.join(' -> ')
+        full_list.join(' -> ')
+        # debugger
     end
 end
