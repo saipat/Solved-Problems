@@ -1,16 +1,16 @@
 require 'strings/capitalized_words'
 
 describe "Capitalized words" do 
-    it "returns the most common letter and its count" do 
-        expect(most_common_letter('abca')).to eq(['a', 2])
+    it "returns the capitalized string" do 
+        expect(capitalize_words("this is a sentence")).to eq("This Is A Sentence")
     end
 
-    it "returns the most common letter and its count" do 
-        expect(most_common_letter('abbab')).to eq(['b', 3])
+    it "returns the capitalized string" do 
+        expect(capitalize_words("mike bloomfield")).to eq("Mike Bloomfield")
     end
 
-    it "returns 'Can\'t count if th esrting is empty'" do 
-        expect(most_common_letter('')).to eq('Can\'t count if the srting is empty')
+    it "returns 'Can\'t capitalize if the srting is empty'" do 
+        expect(capitalize_words('')).to eq('Can\'t capitalize if the srting is empty')
     end
    
 end
