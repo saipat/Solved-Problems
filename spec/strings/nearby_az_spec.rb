@@ -1,15 +1,19 @@
 require 'strings/nearby_az'
 
 describe "Nearby az" do 
-    it "returns the no:of: vowels in the string" do 
-        expect(count_vowels('abcd')).to eq(1)
+    it "returns true if z is within 3 spaces of a" do 
+        expect(nearby_az('baz')).to eq(true)
     end
 
-    it "returns the no:of: vowels in the string" do 
-        expect(count_vowels('cecilia')).to eq(4)
+    it "returns true if z is within 3 spaces of a" do 
+        expect(nearby_az('abcz')).to eq(true)
     end
 
-    it "returns 0 if there is no vowel in the string" do 
-        expect(count_vowels('bcvnmxz')).to eq(0)
+    it "returns false if z is not within 3 spaces of a" do 
+        expect(nearby_az('z')).to eq(false)
+    end
+
+    it "returns false if z is not within 3 spaces of a" do 
+        expect(nearby_az('za')).to eq(false)
     end
 end
