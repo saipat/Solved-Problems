@@ -1,6 +1,6 @@
-require 'strings/most_common_letter'
+require 'strings/capitalized_words'
 
-describe "Most Common Letter" do 
+describe "Capitalized words" do 
     it "returns the most common letter and its count" do 
         expect(most_common_letter('abca')).to eq(['a', 2])
     end
