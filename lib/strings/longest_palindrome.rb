@@ -1,5 +1,5 @@
 require_relative './reverse_and_palindrome'
-#  *** Write a method that takes in a string of lowercase letters (no uppercase letters,no repeats). Consider the *substrings* of the string: consecutive sequences of letters contained inside the string. Find the longest such string of letters that is a palindrome.
+#  *** Write a method that takes in a string of lowercase letters (no uppercase letters,no repeats). Consider the *substrings* of the string: consecutive sequences of letters contained inside the string. Find the longest such string of letters that is a palindrome and also the start and end index.
 
 # O(n^2)
 def longest_palindrome(str)
@@ -7,6 +7,7 @@ def longest_palindrome(str)
 
     best_palindrome = nil
     idx = 0
+    indices = []
 
     while idx < str.length
         length = 1
@@ -15,6 +16,7 @@ def longest_palindrome(str)
             
             if is_palindrome?(substring) && (best_palindrome == nil || substring.length  > best_palindrome.length)
                 best_palindrome = substring
+                indices = [idx, idx+length-1]
             end
 
             length += 1
@@ -23,5 +25,5 @@ def longest_palindrome(str)
         idx += 1
     end
 
-    best_palindrome
+    [best_palindrome, indices]
 end
