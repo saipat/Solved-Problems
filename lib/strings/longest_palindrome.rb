@@ -27,3 +27,13 @@ def longest_palindrome(str)
 
     [best_palindrome, indices]
 end
+
+#  using each_cons
+
+# def longest_palindrome(str)
+#     array = str.downcase.chars
+#     str.length.downto(1) do |i|
+#         sub = array.each_cons(i).find { |b| b == b.reverse }
+#         return sub.join if sub
+#     end
+# end
