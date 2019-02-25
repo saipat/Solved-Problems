@@ -26,10 +26,10 @@ class LinkedList
         current = @head
         full_list =[]
         while current.next != nil
-            full_list += [current.value.to_s]
+            full_list << current.value.to_s
             current = current.next
         end
-        full_list += [current.value.to_s]
+        full_list << current.value.to_s
         full_list.join(' -> ')
         # debugger
     end
@@ -51,11 +51,13 @@ class LinkedList
         if current.value == val
             @head = @head.next
         else
-            while (current != nil && current.next != nil && current.next.value != val)
+            while (current != nil && current.next.value != val)
                 current = current.next
             end
             # debugger
-            if current != nil && current.next != nil
+            if current.next.value == val && current.next.next.nil?
+                return 'Can\'t delete the tail'
+            else
                 current.next = current.next.next
             end
         end

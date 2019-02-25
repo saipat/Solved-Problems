@@ -20,6 +20,13 @@ describe "Initialize Node" do
         expect(node.delete(20)).to eq('5 -> 10 -> 30')
     end
 
+    it "returns 'Can\'t delete the tail'" do
+        node.add(10)
+        node.add(20)
+        node.add(30)
+        expect(node.delete(30)).to eq('Can\'t delete the tail')
+    end
+
     it "deletes the head if head's value equal to the given value" do
         node.add(10)
         node.add(20)
