@@ -6,18 +6,6 @@ describe "Initialize Node" do
         expect(node.head.value).to eq(5)
     end
 
-    # it "Add a new node" do
-    #     expect(node.add(10)).to eq(node.head.next.value)
-    # end
-    
-    # it "Add a new node" do
-    #     expect(node.add(20)).to eq(node.head.next.value)
-    # end
-
-    # it "Add a new node" do
-    #     expect(node.add(30)).to eq(node.head.next.value)
-    # end
-
     it "displays the list" do
         node.add(10)
         node.add(20)
@@ -52,5 +40,12 @@ describe "Initialize Node" do
         node.add(30)
         node.delete(5)
         expect(node.count_nodes).to eq(3)
+    end
+
+    it "reverses the list" do
+        node.add(10)
+        node.add(20)
+        node.add(30)
+        expect(node.reverse()).to eq('30 -> 20 -> 10 -> 5')
     end
 end

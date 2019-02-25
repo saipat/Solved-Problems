@@ -61,4 +61,22 @@ class LinkedList
         end
         display
     end
+
+    def reverse
+        return nil if @head.value.nil?
+
+        current = @head
+        previous = nil
+
+        while current
+            next_node = current.next
+            current.next = previous
+            previous = current
+            current = next_node
+        end
+
+        @head = previous
+        p display
+    end
+
 end
