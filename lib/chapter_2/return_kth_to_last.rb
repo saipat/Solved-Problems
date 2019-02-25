@@ -19,28 +19,28 @@ require_relative 'linked_list'
 # end
 
 # # 2 pointers approach. O(n) time and 0(1) space.
-# def kth_to_last(node, k)
-#     return nil if node.value == nil
+def kth_to_last(node, k)
+    return nil if node.value == nil
 
-#     fast_cursor = node
-#     slow_cursor = node
+    fast_cursor = node
+    slow_cursor = node
 
-#     k.times { fast_cursor = fast_cursor.next }
+    k.times { fast_cursor = fast_cursor.next }
 
-#     until fast_cursor.nil?
-#         fast_cursor = fast_cursor.next
-#         slow_cursor = slow_cursor.next
-#     end
+    until fast_cursor.nil?
+        fast_cursor = fast_cursor.next
+        slow_cursor = slow_cursor.next
+    end
 
-#     slow_cursor.value
-# end
+    slow_cursor.value
+end
 
 # recursive approach
 
-def kth_to_last(node, k)
-    return 0 if node == nil
-    p node.next
-    index = kth_to_last(node.next, k) + 1;
+# def kth_to_last(node, k)
+#     return 0 if node == nil
+#     p node.next
+#     index = kth_to_last(node.next, k) + 1;
     
-    index == k ? node.value : nil
-end
+#     index == k ? node.value : nil
+# end

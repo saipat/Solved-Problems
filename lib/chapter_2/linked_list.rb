@@ -55,7 +55,7 @@ class LinkedList
                 current = current.next
             end
             # debugger
-            if current.next.value == val && current.next.next.nil?
+            if current.next.next.nil?
                 return 'Can\'t delete the tail'
             else
                 current.next = current.next.next
