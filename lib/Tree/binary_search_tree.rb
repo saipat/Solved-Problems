@@ -72,7 +72,35 @@ class BST
         left_balanced && right_balanced && depth
     end
 
-    
+    # left, root, right
+    def in_order_traversal(root_node = @root)
+        return [] unless root_node
+
+        left = in_order_traversal(root_node.left)
+        right = in_order_traversal(root_node.right)
+
+        left + [root_node.value] + right
+    end
+
+    # root, left, right
+    def pre_order_traversal(root_node = @root)
+        return [] unless root_node
+
+        left = in_order_traversal(root_node.left)
+        right = in_order_traversal(root_node.right)
+
+        [root_node.value] + left + right
+    end
+
+    # left, right, root
+    def post_order_traversal(root_node = @root)
+        return [] unless root_node
+
+        left = in_order_traversal(root_node.left)
+        right = in_order_traversal(root_node.right)
+
+        left + right + [root_node.value]
+    end
 end
 
 
@@ -100,6 +128,12 @@ puts "Maximum value in the tree: #{bst.maximum()}"
 puts "Depth of the tree: #{bst.depth()}"
 
 puts "Is the tree balanced? #{bst.is_balanced?()}"
+
+puts "InOrder Traversal: #{bst.in_order_traversal()}"
+
+puts "PreOrder Traversal: #{bst.pre_order_traversal()}"
+
+puts "PostOrder Traversal: #{bst.post_order_traversal()}"
 
 
 
