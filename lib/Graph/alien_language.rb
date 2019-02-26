@@ -1,5 +1,7 @@
 require_relative 'topological_sort.rb'
 
+# Given a sorted dictionary (array of words) of an alien language, find the order of the characters in the language.
+
 def sort_alien_language(words)
     vertices ={}
 
