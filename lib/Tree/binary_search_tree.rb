@@ -102,6 +102,7 @@ class BST
         left + right + [root_node.value]
     end
 
+    # worst case => O(n) & average case => O(log n)
     def delete(value)
         @root = delete_from_tree(@root, value)
     end
