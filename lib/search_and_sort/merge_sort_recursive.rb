@@ -38,5 +38,6 @@ class Array
 end
 
 p [2,3,1,5,4].merge_sort
+p [5,4,3,2,1].merge_sort
 p [2].merge_sort
 p [].merge_sort
