@@ -1,3 +1,8 @@
+# Implement bubble sort
+
+# best case O(n), Worst case O(n^2)
+# Space complexity => O(1)
+
 class Array
     # without prc
     def bubble_sort_without_prc

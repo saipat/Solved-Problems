@@ -2,6 +2,8 @@
 
 #  O(nlogn) => The log n comes from the number of times we have to cut n in half to get down to subarrays of just 1 element (our base case). The additional n comes from the time cost of merging all nn items together each time we merge two sorted subarrays.
 
+# Space complexity => O(n)
+
 class Array
 
   def merge_sort(&prc)

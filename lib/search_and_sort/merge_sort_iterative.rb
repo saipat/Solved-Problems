@@ -1,6 +1,7 @@
 # Write an Array#merge_sort method; it should not modify the original array.
 
 #  O(nlogn)
+# Space Complexity => O(n)
 def merge_sort(arr)
     return arr if arr.count <= 1
 
