@@ -59,6 +59,20 @@ class BST
         depth = [left_depth, right_depth].max
         depth + 1
     end
+
+    #A tree is "superbalanced" if the difference between the depths of any two leaf nodes ↴ is no greater than one.
+    def is_balanced?(root_node = @root)
+        return true unless root_node
+        
+        left_balanced = is_balanced?(root_node.left)
+        right_balanced = is_balanced?(root_node.right)
+
+        depth = (depth(root_node.left) - depth(root_node.right)).abs <= 1
+
+        left_balanced && right_balanced && depth
+    end
+
+    
 end
 
 
@@ -84,6 +98,8 @@ puts "Find the node with the given value => #{value} => #{bst.find(10)}"
 puts "Maximum value in the tree: #{bst.maximum()}"
 
 puts "Depth of the tree: #{bst.depth()}"
+
+puts "Is the tree balanced? #{bst.is_balanced?()}"
 
 
 
