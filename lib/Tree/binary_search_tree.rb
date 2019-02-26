@@ -47,7 +47,7 @@ class BST
         return nil unless root_node
         return maximum(root_node.right) if root_node.right
 
-        root_node.value
+        root_node
     end
 
     def depth(root_node = @root)
@@ -101,6 +101,68 @@ class BST
 
         left + right + [root_node.value]
     end
+
+    def delete(value)
+        @root = delete_from_tree(@root, value)
+    end
+
+    def delete_from_tree(root_node, value)
+        return nil unless root_node
+        if value == root_node.value 
+            root_node = remove(root_node)
+        elsif value <= root_node.value
+            root_node.left = delete_from_tree(root_node.left, value)
+        else
+            root_node.right = delete_from_tree(root_node.right, value)
+        end
+
+        root_node
+    end
+
+
+    def remove(node)
+        if node.left.nil? && node.right.nil?
+            node = nil
+        elsif node.left.nil? && node.right
+            node = node.right
+        elsif node.left && node.right.nil?
+            node = node.left
+        else 
+            node = replace(node)
+        end
+
+        node
+    end
+
+    def replace(node)
+        replacement = maximum(node.left)
+
+        if replacement == node.left
+            replacement.right = node.right
+            return replacement
+        end
+
+        if replacement.left
+            promote(node.left)
+        end
+
+        replacement.left = node.left
+        replacement.right = node.right
+
+        replacement
+    end
+
+    def promote(node)
+        parent = node
+        child = node.right
+
+        while child.right
+            parent = parent.right
+            child = child.right
+        end
+
+        parent.right = child.left
+    end
 end
 
 
@@ -115,15 +177,15 @@ bst.insert(10)
 bst.insert(60)
 bst.insert(5)
 bst.insert(75)
-bst.insert(45)
 bst.insert(40)
 bst.insert(12)
 
-# p bst
-value = 10
-puts "Find the node with the given value => #{value} => #{bst.find(10)}"
+p bst
 
-puts "Maximum value in the tree: #{bst.maximum()}"
+value = 10
+puts "\nFind the node with the given value => #{value} => #{bst.find(value)}"
+
+puts "Maximum value in the tree: #{bst.maximum().value}"
 
 puts "Depth of the tree: #{bst.depth()}"
 
@@ -135,5 +197,8 @@ puts "PreOrder Traversal: #{bst.pre_order_traversal()}"
 
 puts "PostOrder Traversal: #{bst.post_order_traversal()}"
 
+value = 15
+puts "Delete the node with the given value => #{value} => #{bst.delete(value)} \n"
 
+p bst
 
