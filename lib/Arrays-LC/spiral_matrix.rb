@@ -6,20 +6,21 @@ def spiral_matrix(matrix)
     m = matrix.dup
     result = []
 
-    until m.size < 1
-        result << m.shift
-        m = m.transpose.reverse
-    end
-
-    #  for working with larger matrices
+    # O(m* n^2)
     # until m.size < 1
     #     result << m.shift
-    #     result << m.map(&:pop)
-    #     result << (m.pop || []).reverse
-    #     result << m.map(&:shift).reverse
+    #     m = m.transpose.reverse
     # end
 
-    result.flatten
+    # for working with larger matrices => O(n^2)
+    until m.size < 1
+        result << m.shift
+        result << m.map(&:pop)
+        result << (m.pop || []).reverse
+        result << m.map(&:shift).reverse
+    end
+
+    result.flatten.compact
 end
 
 # testing
