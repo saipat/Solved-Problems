@@ -17,9 +17,9 @@ def remove_duplicates(arr)
     no_duplicate_idx
 end
 
-def print_result(arr, len)
-    (0).upto(len) {}
-end
+# def print_result(arr, len)
+#     (0).upto(len) {}
+# end
 
 # testing
 
