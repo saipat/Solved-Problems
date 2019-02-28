@@ -4,6 +4,7 @@
 
 # O(n)
 def plus_one(digits)
+    return 'Digits can\'t be empty' if digits.empty?
     digits = digits.join('').to_i + 1 
     digits.to_s.chars.map {|el| el.to_i}
 end
@@ -19,4 +20,7 @@ array = [5,9,9,9]
 puts "plus_one => #{array} => #{plus_one(array)}"
 
 array = [0]
+puts "plus_one => #{array} => #{plus_one(array)}"
+
+array = []
 puts "plus_one => #{array} => #{plus_one(array)}"
