@@ -41,7 +41,7 @@
             console.log(parent);
 
 
-            iterateDom(parent, function(element){
+            iterateDom(parent, element => {
                 if (match(element, selector)) {
                     nodeList.push(element);
                 }
