@@ -7,6 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <script src="main.js"></script>
+    <script>
+        var fruits = ['Apple', 'Mango', 'Grapes'];
+        document.write("<h1>List of items:</h1>");
+        document.write("<hr />");
+        
+        document.write('Size of the array: ', fruits.length);
+        document.write("<hr />");
+        document.write('First item: ', fruits[0]);
+        document.write("<hr />");
+        for(let i=0; i< fruits.length; i++){
+            document.write(`Item ${i} in fruits : ${fruits[i]}`);
+            document.write("<hr />");
+        }
+        document.write("<hr />");
+        document.write('Unshifting an item : ', fruits.unshift('Cherry'));
+        for(let i=0; i< fruits.length; i++){
+            document.write(`Item ${i} in fruits : ${fruits[i]}`);
+            document.write("<hr />");
+        }
+
+        document.write("<hr />");
+        document.write('Shifting an item : ', fruits.shift());
+
+        document.write("<hr />");
+        document.write('IndexOf Apple: ', fruits.indexOf('Apple'));
+
+        document.write("<hr />");
+        document.write('Splice: ', fruits.splice(0, 1));
+
+        document.write("<hr />");
+        document.write('Slice: ', fruits.slice(0, 1));
+
+        document.write("<hr />");
+        document.write('IndexOf Apple: ', fruits.indexOf('Apple'));
+
+        document.write("<hr />");
+        document.write('First item: ', fruits[0]);
+        document.write("<hr />");
+
+        document.write('<ul>')
+            fruits.forEach( (item) => {
+                document.write('<li>' + item + '</li>');
+            })
+        document.write('</ul>')
+    </script>
+
 </head>
 
 <!-- Responsive Web Design or RWD is a technique that enables a single webpage to adapt itself for different sizes of screens without having the user to scroll sideways. -->
@@ -17,6 +63,7 @@ eg: @media (max-width: 768px)-->
 <!-- When we write the code in CSS, we give it some values for which it will act responsively. The common screen width sizes are 1024px, 768px, 420px. These are easy to break, 1024px and above are for desktops, 768px and above for tablets and lower than 420px for mobile screen. -->
 
 <body>
+    <br />
     <input type="button" value="Button tooltip" title="This is a button tooltip"
             style="background-color: blue; color: white"/> 
     <img src="" alt="image" title="Image tooltip">
