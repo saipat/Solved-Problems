@@ -1,0 +1,58 @@
+ <!-- Implement querySelectorALL() -->
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <script src="main.js"></script> -->
+   
+ </head>
+ <body>
+    <div class="parent"><p class="mine">Hello</p></div>
+    <div class="parent"><p class="mine">Mango</p></div>
+    <div class="parent"><p class="mine">Apple</p>
+</div>
+
+    <script>
+        // var parent = document.querySelectorAll('.mine');
+        // console.log(parent);
+         function iterateDom(node, callback) {
+            let nodes = [];
+            nodes.push(node);
+
+            do{
+                element = node.shift;
+                callback(element);
+                nodes.unshift(element.children);
+            }while (node.length > 0)
+        }
+
+        function match(element, selector){
+            console.log(element);
+            return element.tagName === selector.toUpperCase() || element.classList.contains(selector);
+        }
+
+        function querySelectAll(selector){
+            let nodeList = [];
+            let parent = document.getElementsByTagName('body');
+            console.log(parent);
+
+
+            iterateDom(parent, function(element){
+                if (match(element, selector)) {
+                    nodeList.push(element);
+                }
+            });
+
+            return nodeList;
+        }
+
+       
+
+        console.log(querySelectAll());
+    </script>
+ </body>
+ </html>
