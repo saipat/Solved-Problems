@@ -24,14 +24,14 @@
             nodes.push(node);
 
             do{
-                element = node.shift;
+                element = nodes.shift();
                 callback(element);
                 nodes.unshift(element.children);
             }while (node.length > 0)
         }
 
         function match(element, selector){
-            console.log(element);
+            console.log(element.classList);
             return element.tagName === selector.toUpperCase() || element.classList.contains(selector);
         }
 
@@ -42,6 +42,7 @@
 
 
             iterateDom(parent, element => {
+               
                 if (match(element, selector)) {
                     nodeList.push(element);
                 }
@@ -52,7 +53,7 @@
 
        
 
-        console.log(querySelectAll());
+        console.log(querySelectAll('.mine'));
     </script>
  </body>
  </html>

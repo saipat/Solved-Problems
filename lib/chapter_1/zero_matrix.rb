@@ -1,4 +1,4 @@
-#  *** Write an algorithm such that if an element in MxM matrix is 0, its entire row and colum is set to zero.
+#  *** Write an algorithm such that if an element in MxM matrix is 0, its entire row and column is set to zero.
 
 def zero_matrix(matrix) 
 
