@@ -1,0 +1,70 @@
+<!-- // Design calculator in JS. -->
+
+<html>
+	<head>
+		<title>Calculator in JS</title>
+        <style>
+            #box{
+                margin: 12em 30em;
+            }
+            input[type="button"]{
+                width: 100%;
+                padding: 5px 10px;
+            }
+            #table {
+                border: 2px solid #457;
+                /* width: 100%; */
+            }
+        </style>
+        <script type='text/Javascript'>
+            function d(val){
+                document.getElementById('result').value += val;
+                console.log(document.getElementById('result').value);
+            }
+
+            function clearText(){
+                document.getElementById('result').value = '';
+            }
+
+            function findValue(){
+                let value = document.getElementById('result').value;
+                let result = eval(value);
+                document.getElementById('result').value = result;
+            }
+        </script>
+	</head>
+    <body>
+        <div id='box'>
+            <table id='table'>
+                <tr>
+                    <td colspan="3"><input type='text' id='result' readonly/></td>
+                    <td><input type="button" value="C" onClick="clearText()"></input></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value='1' onClick="d('1')"></input></td>
+                    <td><input type="button" value='2' onClick="d('2')"></input></td>
+                    <td><input type="button" value='3' onClick="d('3')"></input></td>
+                    <td><input type="button" value='+' onClick="d('+')"></input></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value='4' onClick="d('4')"></input></td>
+                    <td><input type="button" value='5' onClick="d('5')"></input></td>
+                    <td><input type="button" value='6' onClick="d('6')"></input></td>
+                    <td><input type="button" value='-' onClick="d('-')"></input></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value='7' onClick="d('7')"></input></td>
+                    <td><input type="button" value='8' onClick="d('8')"></input></td>
+                    <td><input type="button" value='9' onClick="d('9')"></input></td>
+                    <td><input type="button" value='*' onClick="d('*')"></input></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value='/' onClick="d('/')"></input></td>
+                    <td><input type="button" value='0' onClick="d(0.')"></input></td>
+                    <td><input type="button" value='.' onClick="d('.')"></input></td>
+                    <td><input type="button" value='=' onClick="findValue()"></input></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
