@@ -1,0 +1,63 @@
+<!-- Create Accordians with JavaScript -->
+
+<html>
+    <head>
+        <title>Create Accordians</title>
+        <style type="text/css">
+            .accordian{
+                border: 2px solid #e76;
+            }
+            .accordian-header{
+                background: rgb(235, 205, 200);
+                padding: 5px 15px;
+                border-radius: 2px;
+                cursor: pointer;
+                margin: 0;
+            }
+            .accordian .content{
+                overflow-y: hidden;
+                height: 0;
+            }
+            .full-height{
+                height: auto !important;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="container">
+            <h3>Accordian example</h3>
+            <div class="accordian-container">
+                <div class="accordian">
+                    <h5 class="accordian-header">Tab 1</h5>
+                    <div class="content">
+                        tab 1 content
+                    </div>
+                </div>
+                <div class="accordian">
+                    <h5 class="accordian-header">Tab 2</h5>
+                    <div class="content">
+                        tab 2 content
+                    </div>
+                </div>
+                <div class="accordian">
+                    <h5 class="accordian-header">Tab 3</h5>
+                    <div class="content">
+                        tab 3 content
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            const tabs = document.getElementsByClassName('accordian-header');
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].addEventListener('click', function () {
+                    let content = this.nextElementSibling;
+                    content.classList.toggle('full-height');
+                });
+            }
+        </script>
+    </body>
+</html>
