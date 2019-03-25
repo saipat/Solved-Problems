@@ -1,0 +1,21 @@
+<!-- How to make the font bold using JavaScript? -->
+
+<html>
+    <head>
+        <title>Bolf Font</title>
+        <style></style>
+        <script>
+            function makeBold(){
+                let para = document.getElementById('para');
+                let btn = document.getElementById('btn');
+                btn.addEventListener('click', function(){
+                    para.style.fontWeight = '700';
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <p id='para'>Make me bold!</p>
+        <button id='btn' onclick="makeBold()">Be Bold</button>
+    </body>
+</html>

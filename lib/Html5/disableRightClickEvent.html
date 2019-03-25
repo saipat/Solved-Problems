@@ -1,0 +1,53 @@
+<!-- // write code to Disable right click on webpage with JavaScript
+
+//  check if the document has layers to cpature event
+//  if yes, capture the events using CaptureEvents() method and get the MOUSEDOWN event fron the event object. Upon mousedowm, we will ececute the function f1.
+
+// f1 => check if the document.all is true. if yes, return false;
+//  else condition is to monitor the mouse up event that is releasing the mouse.
+// on mouseup , we execute f2
+
+// f2 => we have an event as an argument. check the eevent using which property.for right click, event no is 2 and mouse wheel it is 3. if the event matches, return  false.
+
+// Finally for the context menu property of the document, simple disable it by passing it to f1() function. Now whenever
+the user clicks with the right click on the page, the context menu is not shown.
+
+
+-->
+ <!DOCTYPE html>
+ <html>
+ <head>
+    <title>No right click</title>
+    <!-- <style>
+        body{
+            user-select: none;
+        }
+    </style> -->
+    <script>
+        // function f1(){
+        //     if(document.all) return false;
+        // }
+
+        // function f2(event){
+        //     if(document.layers || (document.getElementById &! document.all)){
+        //         if(event.which === 2 || event.which === 3) return false;
+        //     }
+        // }
+
+        // if(document.layers){
+        //     document.captureEvents(Event.MOUSEDOWN)
+        //     document.onmousedown = f1;
+        // }else{
+        //     document.onmouseup = f2;
+        //     document.oncontextmenu = f1;
+        // }
+
+        // document.addEventListener("contextmenu", event => event.preventDefault())
+    </script>
+ </head>
+ <body oncontextmenu="return false;">
+  
+    <h2>Disable right click</h2>
+     
+ </body>
+ </html>
