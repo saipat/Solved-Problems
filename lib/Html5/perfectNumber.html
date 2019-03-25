@@ -1,0 +1,43 @@
+<!-- // A number is said to be perfect when its value is equal to its sum of complete divisors.
+
+// Example of perfect numbers are: 6, 28, 496 etc
+
+// IOCE
+// I => 6
+// O => true exp: 1*2*3
+// I => 28
+// O => 1*2*2*7 -->
+
+<html>
+    <title>Perfect number</title>
+    <style>
+    </style>
+    <body>
+        <script type="text/javascript">
+            function perfectNumber() {
+                const number = Number(document.getElementById('Number').value);
+                console.log(number);
+                let sum = 0;
+                let factors = [];
+
+                for (let i = 0; i < number; i++) {
+                    if (number % i === 0) {
+                        sum += i;
+                        factors.push(i);
+                        // console.log(sum);
+                    }
+                }
+                    if (sum === number) {
+                        window.alert(`${number} is a perfect number.`);
+                    } else {
+                        window.alert(`${number} is a not perfect number.`);
+                    }
+                console.log(factors);
+            }
+        </script>
+        <h3>Check is a number is perfect</h3>
+        <p>Enter the Number: <input type="text" id="Number"></p>
+        <center><button onClick="perfectNumber()">Check</button></center>
+    </body>
+    
+</html>
