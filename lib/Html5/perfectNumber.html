@@ -13,6 +13,11 @@
     <style>
     </style>
     <body>
+        
+        <h3>Check is a number is perfect</h3>
+        <p>Enter the Number: <input type="text" id="Number"></p>
+        <center><button onClick="perfectNumber()">Check</button></center>
+
         <script type="text/javascript">
             function perfectNumber() {
                 const number = Number(document.getElementById('Number').value);
@@ -27,17 +32,14 @@
                         // console.log(sum);
                     }
                 }
-                    if (sum === number) {
-                        window.alert(`${number} is a perfect number.`);
-                    } else {
-                        window.alert(`${number} is a not perfect number.`);
-                    }
+                if (sum === number) {
+                    window.alert(`${number} is a perfect number.`);
+                } else {
+                    window.alert(`${number} is a not perfect number.`);
+                }
                 console.log(factors);
             }
         </script>
-        <h3>Check is a number is perfect</h3>
-        <p>Enter the Number: <input type="text" id="Number"></p>
-        <center><button onClick="perfectNumber()">Check</button></center>
     </body>
     
 </html>

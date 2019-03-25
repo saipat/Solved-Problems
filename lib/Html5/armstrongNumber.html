@@ -1,0 +1,39 @@
+<!-- A number is said to be Armstrong when its value is equal to its sum of cube of digits. -->
+
+<!-- IoCE
+I = 153
+O => yes  
+exp => 153 = (1*1*1) + (5*5*5) + (3*3*3) = 1+125+27 = 153 -->
+
+<html>
+    <title>Armstrong Number</title>
+    <style>
+    </style>
+    <body>
+        <h3>Check if a number is Armstrong</h3>
+        <p></p>Enter a number: <input type="text" id="Number"></p>
+        <center><button onClick="isArmstrongNumber()">Check</button></center>
+
+        <script type="text/javascript">
+            function isArmstrongNumber(){
+                let number = Number(document.getElementById('Number').value);
+
+                let sum = 0, digits, num = number;
+                
+                while(number > 1){
+                    digits = Math.floor(number % 10);
+                    console.log(digits);
+                    sum += (digits * digits * digits);
+                    number = number / 10;
+                }
+
+                if(sum === num){
+                    window.alert(`${num} is a Armstrong number`);
+                }else{
+                    window.alert(`${num} is a not Armstrong number`)
+                }
+            }
+
+        </script>
+    </body>
+</html>
