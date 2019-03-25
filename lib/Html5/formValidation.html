@@ -1,0 +1,130 @@
+<!-- Implement form validation in JS -->
+
+<html>
+   <head>
+       <title>Form Validation</title>
+       <style></style>
+              
+   </head>
+    
+    <body>
+
+        <div>
+            <form name="registration" onSubmit="return validation();">
+                <fieldset>
+                    <legend>Personal Detail</legend></br>
+                    <label>First Name:</label></br>
+                    <input type="text" placeholder="First Name" name="fname"></input></br>
+                    <label>Last Name:</label></br>
+                    <input type="text" placeholder="Last Name" name="lname"></input></br>
+                    <label>Gender</label></br>
+                    <select name="gname">
+                        <option selected="" value="Default">Select</option>
+                        <option>Male</option>
+                        <OPTION>Female</OPTION>
+                    </select></br>
+                    <label>Contact Number</label></br>
+                    <input type="text" placeholder="Mobile Number" name="number"></input>
+                    <input type="submit" value="Submit" name="Submit"></input>
+                </fieldset>
+            </form>
+        </div>
+        <script type="text/javascript">
+            function validation() {
+                // console.log('hi');
+
+                const fname = document.registration.fname;
+                const lname = document.registration.lname;
+                const gname = document.registration.gname;
+                const number = document.registration.number;
+
+                //    console.log(fname);
+
+                if (validFirstName(fname)) {
+                    if (validLastName(lname)) {
+                        if (validGender(gname)) {
+                            if (validPhnum(number)) {
+
+                            }
+                        }
+                    }
+                }
+
+                return false;
+            }
+
+            function validFirstName(fname) {
+                var letters = /^[A-Za-z]+$/;
+
+                // console.log(fname.value);
+
+                if (fname.value.length === 0) {
+                    alert('Please enter your First name');
+                    fname.focus();
+                    return false;
+                } else if (fname.value.match(letters)) {
+                    return true;
+                } else {
+                    alert('Please use alphabets to enter the first name.')
+                    fname.focus();
+                    return false;
+                }
+            }
+
+            function validLastName(lname) {
+                var letters = /^[A-Za-z]+$/;
+
+                if (lname.value.length === 0) {
+                    alert('Please enter your Last Name');
+                    lname.focus();
+                    return false;
+                } else if (lname.value.match(letters)) {
+                    return true;
+                } else {
+                    alert('Please use alphabets to enter the Last Name.')
+                    lname.focus();
+                    return false;
+                }
+            }
+
+            function validGender(gname) {
+                if (gname.value === 'Default') {
+                    alert('Please select a Gender');
+                    gname.focus();
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+            function validPhnum(number) {
+                var numbers = /^[0-9]+$/;
+
+                if(number.value.length==0 )
+                {
+                    alert('Please enter contact number');
+                    fname.focus();
+                    return false;
+                }
+                else if(number.value.length>10)
+                {
+                    alert('Please enter a valid contact number');
+                    fname.focus();
+                    return false;
+
+                }
+                else if(number.value.match(numbers))
+                {
+                    alert('Form Succesfully Submitted');
+                    window.location.reload();
+                    return true;
+                }
+                else
+                {
+                    alert('Please check your contact number');
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
