@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        function getSize(){
+            console.log('hi');
+            var file = document.getElementById('file');
+
+            file.addEventListener('change', function(){
+            var size = file.files[0].size /1024;
+            console.log(size + 'KB');
+            })
+        }
+        
+    </script>
+</head>
+<body>
+    <form onsubmit="getSize()">
+        <input type="file" id='file' />
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
