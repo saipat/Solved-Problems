@@ -1,0 +1,30 @@
+<html>
+	<head>
+        <script type='text/javascript'>
+            var copyBtn = document.getElementbyID('copyBtn');
+
+            copyBtn.addEventListener('click', function(event){
+                var copyTxtArea = document.querySelector('.txtArea');
+                copyTxtArea.select()
+            
+                try {
+                    let s = document.execCommand('copy');
+                    let msg = s ? 'successful' : 'did not copy';
+                    console.log(s);
+                }catch(e){
+                    console.log('did not copy');
+                }
+
+            });
+		</script>
+    </head>
+	<body>
+		<div>
+			<button id="copyBtn">Copy text</button>
+			<textarea rows="4" cols="40" class="txtArea">
+				some textthat you want to copy.
+			</textarea>
+		</div>
+		
+	</body>
+</html>;
