@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        function printTable(){
+            const num = Number(document.getElementById('num').value);
+            for(let i=1; i<=num; i++){
+                let p = document.getElementById('print');
+                p.innerHTML += (`${i*num} `) + '<br>';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p>Enter number to print the table</p>
+        <input type='text' id='num' value=''>
+        <button id='btn' onclick="printTable()">Print table</button>
+        <p id='print'></p>
+    </div
+    
+</body>
+</html>
