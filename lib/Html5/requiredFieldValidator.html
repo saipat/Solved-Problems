@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        function verifyFields(){
+            let requireFields = true;
+            const name = document.getElementById('nameTxt').value;
+            const email = document.getElementById('emailTxt').value;
+
+            if(name.trim() === ''){
+                document.getElementById('nameSpan').innerHTML = '* Name is Required *';
+                requireFields = false;
+            }
+            if(email.trim() === ''){
+                document.getElementById('emailSpan').innerHTML = '* Email is Required *';
+                requireFields=false;
+            }
+
+            return requireFields;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return verifyFields()">
+        <b>Enter Name</b>
+        <input type="text" id="nameTxt">
+        <span id='nameSpan'></span><br>
+        <b>Enter Email</b>
+        <input type="text" id="emailTxt">
+        <span id='emailSpan'></span><br>
+
+        <button id='btn'>Submit</button>
+    </form>
+    
+</body>
+</html>
