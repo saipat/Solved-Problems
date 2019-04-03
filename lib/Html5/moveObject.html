@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        var imageObj = null;
+
+        function init(){
+            imageObj = document.getElementById('image');
+            imageObj.style.position = 'relative';
+            imageObj.style.left = '5px';
+            imageObj.style.top = '5px';
+        }
+
+        function moveObject(e){
+            const kCode = e.which || e.keyCode;
+
+            switch(kCode){
+                case 37:
+                    moveLeft();
+                    break;
+                case 38:
+                    moveTop();
+                    break;
+                case 39:
+                    moveRight();
+                    break;
+                case 40:
+                    moveDown();
+                    break;
+            }
+        }
+
+        function moveLeft(){
+            imageObj.style.left  = parseInt(imageObj.style.left)-5 + 'px';
+        }
+        function moveTop(){
+            imageObj.style.top  = parseInt(imageObj.style.top)-5 + 'px';
+        }
+        function moveRight(){
+            imageObj.style.left  = parseInt(imageObj.style.left)+5 + 'px';
+        }
+        function moveDown(){
+            imageObj.style.top  = parseInt(imageObj.style.top)+5 + 'px';
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body onkeydown="moveObject(event)">
+    <p>Move Object using arrow keys. Up-Down-Left-Right</p>
+    <img id="image" src="./IMG.JPG" alt="Google Doodle" width='150px' height='150px'>
+</body>
+</html>
