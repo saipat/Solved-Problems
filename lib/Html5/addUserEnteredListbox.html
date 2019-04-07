@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <script type="text/javascript">
+            function insertItem(){
+                // console.log('hi');
+                var input = document.getElementById('ipTxt').value;
+                var x = document.getElementById('access');
+                var option = document.createElement('option');
+                option.text = input;
+                x.add(option);
+                alert(input + ' has been added');
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <p><big>Enter your favorite item</big></p>
+            <input type="text" id='ipTxt' />
+            <input type='button' id='btn' onclick="insertItem()" value='insert' /><br>
+            <select id='access' size='10'>
+                <option>Mobile</option>
+                <option>Pen</option>
+                <option>Laptop</option>
+            </select>
+        </form>
+    </body>
+</html>
