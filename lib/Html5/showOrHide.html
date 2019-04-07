@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script type="text/javascript">
+            function showOrHide(element){
+                const s = document.getElementById(element);
+                if(s !== null){
+                    if(s.style.display === 'block'){
+                        s.style.display = 'none';
+                    }else{
+                        s.style.display = 'block';
+                    }
+                }
+
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <p><big>Show/hide</big></p>
+        <input type="button" id='btn' value="show/hide" onclick="showOrHide('message')">
+        <div id="message" style='display: none'>
+            <p>Hide me ?</p>
+            <p> show me?</p>
+        </div>
+    </body>
+</html>
