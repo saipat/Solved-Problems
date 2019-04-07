@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function selectAll() {
+            const items = document.getElementsByName('chk');
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].type == 'checkbox' ) {
+                    items[i].checked = true;
+                }
+            }
+            alert('Selected all items');
+        }
+
+        function unSelectAll() {
+            const items = document.getElementsByName('chk');
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].type == 'checkbox' ) {
+                    items[i].checked = false;
+                }
+            }
+            alert('Unselected all items');
+        }
+    </script>
+</head>
+
+<body>
+    <p><big>Print all selected checkboxed</big></p>
+    <input type="checkbox" name="chk" value="Pen" />Pen<br>
+    <input type="checkbox" name="chk" value="Mobile" />Mobile <br>
+    <input type="checkbox" name="chk" value="Eraser" />Eraser <br>
+    <input type="checkbox" name="chk" value="Charger" />Charger <br>
+    <input type="button" value="Select All" onclick="selectAll()">
+    <input type="button" value="Unselect All" onclick="unSelectAll()">
+</body>
+
+</html>
