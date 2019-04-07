@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>
+            Print
+        </title>
+        <script type="text/javascript">
+            function printItem(){
+                const x = document.getElementById('access');
+                const item = x.options[x.selectedIndex].value;
+                alert(item);
+            }
+        </script>
+    </head>
+    <body>
+        <p><big>Print the selected item</big></p>
+        <select id='access' onchange="printItem()">
+            <option selected disabled>Select an item to print</option>
+            <option>Coffee</option>
+            <option>Tea</option>
+            <option>Milk</option>
+        </select>
+    </body>
+</html>
