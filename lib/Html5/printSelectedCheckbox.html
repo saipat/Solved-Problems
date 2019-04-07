@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <script type="text/javascript">
+            function printSelected(){
+                const items = document.getElementsByName('chk');
+                let selectedItems = '';
+
+                for(let i=0; i<items.length; i++){
+                    if(items[i].type == 'checkbox' && items[i].checked == true){
+                        // console.log(items[i].value);
+                        selectedItems += items[i].value + '\n';
+                    }
+                }
+                // console.log(selectedItems);
+                alert(selectedItems);
+            }
+        </script>
+    </head>
+    <body>
+        <p><big>Print all selected checkboxed</big></p>
+        <input type="checkbox" name="chk" value="Pen"/>Pen<br>
+        <input type="checkbox" name="chk" value="Mobile"/>Mobile <br>
+        <input type="checkbox" name="chk" value="Eraser"/>Eraser <br>
+        <input type="checkbox" name="chk" value="Charger"/>Charger <br>
+        <input type="button" value="Print" onclick="printSelected()">
+    </body>
+</html>
